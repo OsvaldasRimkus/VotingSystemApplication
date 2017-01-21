@@ -25,4 +25,35 @@ public class DistrictEntity {
     @JoinColumn(name = "candidates")
     private List<CandidateEntity> CandidatesList;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<CountyEntity> getCountiesList() {
+        return CountiesList;
+    }
+
+    public void setCountiesList(List<CountyEntity> countiesList) {
+        CountiesList = countiesList;
+    }
+
+    public List<CandidateEntity> getCandidatesList() {
+        return CandidatesList;
+    }
+
+    public void setCandidatesList(List<CandidateEntity> candidatesList) {
+        CandidatesList = candidatesList;
+    }
 }

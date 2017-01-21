@@ -19,4 +19,28 @@ public class PoliticalPartyEntity {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private List<CandidateEntity> candidateList;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<CandidateEntity> getCandidateList() {
+        return candidateList;
+    }
+
+    public void setCandidateList(List<CandidateEntity> candidateList) {
+        this.candidateList = candidateList;
+    }
 }

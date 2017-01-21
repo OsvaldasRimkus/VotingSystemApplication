@@ -17,4 +17,11 @@ public class CountyRepresentativeEntity extends AdminEntity {
     @OneToOne(cascade = CascadeType.ALL)
     private CountyEntity county;
 
+    public CountyEntity getCounty() {
+        return county;
+    }
+
+    public void setCounty(CountyEntity county) {
+        this.county = county;
+    }
 }

@@ -23,4 +23,44 @@ public class CountyEntity {
     DistrictEntity district;
     @OneToOne(mappedBy = "county")
     CountyRepresentativeEntity CountyRepresentative;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getVotersCount() {
+        return votersCount;
+    }
+
+    public void setVotersCount(int votersCount) {
+        this.votersCount = votersCount;
+    }
+
+    public DistrictEntity getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(DistrictEntity district) {
+        this.district = district;
+    }
+
+    public CountyRepresentativeEntity getCountyRepresentative() {
+        return CountyRepresentative;
+    }
+
+    public void setCountyRepresentative(CountyRepresentativeEntity countyRepresentative) {
+        CountyRepresentative = countyRepresentative;
+    }
 }
