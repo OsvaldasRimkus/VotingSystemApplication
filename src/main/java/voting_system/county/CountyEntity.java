@@ -20,9 +20,9 @@ public class CountyEntity {
 
     @ManyToOne
     @JoinColumn(name = "district_id")
-    DistrictEntity district;
+    private DistrictEntity district;
     @OneToOne(mappedBy = "county")
-    CountyRepresentativeEntity CountyRepresentative;
+    private CountyRepresentativeEntity countyRepresentative;
 
     public Long getId() {
         return id;
@@ -57,10 +57,10 @@ public class CountyEntity {
     }
 
     public CountyRepresentativeEntity getCountyRepresentative() {
-        return CountyRepresentative;
+        return countyRepresentative;
     }
 
     public void setCountyRepresentative(CountyRepresentativeEntity countyRepresentative) {
-        CountyRepresentative = countyRepresentative;
+        this.countyRepresentative = countyRepresentative;
     }
 }

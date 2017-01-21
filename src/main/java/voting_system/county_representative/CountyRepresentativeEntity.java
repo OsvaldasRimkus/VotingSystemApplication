@@ -1,6 +1,6 @@
 package voting_system.county_representative;
 
-import voting_system.Admin.AdminEntity;
+import voting_system.admin.AdminEntity;
 import voting_system.county.CountyEntity;
 
 import javax.persistence.CascadeType;

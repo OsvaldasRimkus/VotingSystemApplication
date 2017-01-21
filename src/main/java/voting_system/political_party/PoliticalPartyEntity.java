@@ -1,6 +1,6 @@
 package voting_system.political_party;
 
-import voting_system.Candidate.CandidateEntity;
+import voting_system.candidate.CandidateEntity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,7 +17,6 @@ public class PoliticalPartyEntity {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
     private List<CandidateEntity> candidateList;
 
     public Long getId() {

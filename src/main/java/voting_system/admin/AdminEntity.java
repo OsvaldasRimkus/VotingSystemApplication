@@ -1,4 +1,4 @@
-package voting_system.Admin;
+package voting_system.admin;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

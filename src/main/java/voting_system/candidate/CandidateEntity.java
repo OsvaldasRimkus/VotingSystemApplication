@@ -1,4 +1,4 @@
-package voting_system.Candidate;
+package voting_system.candidate;
 
 import voting_system.district.DistrictEntity;
 import voting_system.political_party.PoliticalPartyEntity;
@@ -21,10 +21,12 @@ public class CandidateEntity {
     private int positionInPartyList;
 
     @ManyToOne
-    PoliticalPartyEntity politicalParty;
+    @JoinColumn(name = "political_party")
+    private PoliticalPartyEntity politicalParty;
 
     @ManyToOne
-    DistrictEntity singleElectDistrict;
+    @JoinColumn(name = "district")
+    private DistrictEntity singleMandateDistrict;
 
     public Long getId() {
         return id;
@@ -74,11 +76,11 @@ public class CandidateEntity {
         this.politicalParty = politicalParty;
     }
 
-    public DistrictEntity getSingleElectDistrict() {
-        return singleElectDistrict;
+    public DistrictEntity getSingleMandateDistrict() {
+        return singleMandateDistrict;
     }
 
-    public void setSingleElectDistrict(DistrictEntity singleElectDistrict) {
-        this.singleElectDistrict = singleElectDistrict;
+    public void setSingleMandateDistrict(DistrictEntity singleMandateDistrict) {
+        this.singleMandateDistrict = singleMandateDistrict;
     }
 }

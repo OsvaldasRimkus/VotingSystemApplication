@@ -1,6 +1,6 @@
 package voting_system.district;
 
-import voting_system.Candidate.CandidateEntity;
+import voting_system.candidate.CandidateEntity;
 import voting_system.county.CountyEntity;
 
 import javax.persistence.*;
@@ -19,11 +19,10 @@ public class DistrictEntity {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "district")
-    private List<CountyEntity> CountiesList;
+    private List<CountyEntity> countiesList;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "candidates")
-    private List<CandidateEntity> CandidatesList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "singleMandateDistrict")
+    private List<CandidateEntity> candidatesList;
 
     public Long getId() {
         return id;
@@ -42,18 +41,18 @@ public class DistrictEntity {
     }
 
     public List<CountyEntity> getCountiesList() {
-        return CountiesList;
+        return countiesList;
     }
 
     public void setCountiesList(List<CountyEntity> countiesList) {
-        CountiesList = countiesList;
+        this.countiesList = countiesList;
     }
 
     public List<CandidateEntity> getCandidatesList() {
-        return CandidatesList;
+        return candidatesList;
     }
 
     public void setCandidatesList(List<CandidateEntity> candidatesList) {
-        CandidatesList = candidatesList;
+        this.candidatesList = candidatesList;
     }
 }
