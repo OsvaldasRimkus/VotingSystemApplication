@@ -16,8 +16,8 @@ public class PoliticalPartyEntity {
     private Long id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<CandidateEntity> candidateList;
+    @OneToMany
+    private List<CandidateEntity> partyMembersList;
 
     public Long getId() {
         return id;
@@ -35,11 +35,11 @@ public class PoliticalPartyEntity {
         this.name = name;
     }
 
-    public List<CandidateEntity> getCandidateList() {
-        return candidateList;
+    public List<CandidateEntity> getPartyMembersList() {
+        return partyMembersList;
     }
 
-    public void setCandidateList(List<CandidateEntity> candidateList) {
-        this.candidateList = candidateList;
+    public void setPartyMembersList(List<CandidateEntity> partyMembersList) {
+        this.partyMembersList = partyMembersList;
     }
 }

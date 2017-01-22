@@ -21,11 +21,11 @@ public class CandidateEntity {
     private int positionInPartyList;
 
     @ManyToOne
-    @JoinColumn(name = "political_party")
+    @JoinColumn(name = "political_party_id", nullable = true)
     private PoliticalPartyEntity politicalParty;
 
     @ManyToOne
-    @JoinColumn(name = "district")
+    @JoinColumn(name = "district_id", nullable = true)
     private DistrictEntity singleMandateDistrict;
 
     public Long getId() {

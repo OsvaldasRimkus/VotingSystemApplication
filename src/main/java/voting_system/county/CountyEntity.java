@@ -1,5 +1,6 @@
 package voting_system.county;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import voting_system.county_representative.CountyRepresentativeEntity;
 import voting_system.district.DistrictEntity;
 
@@ -19,9 +20,11 @@ public class CountyEntity {
     private int votersCount;
 
     @ManyToOne
-    @JoinColumn(name = "district_id")
+    @JoinColumn(name = "district_id", nullable = false)
+    @JsonBackReference
     private DistrictEntity district;
-    @OneToOne(mappedBy = "county")
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "county")
     private CountyRepresentativeEntity countyRepresentative;
 
     public Long getId() {

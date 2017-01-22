@@ -5,6 +5,7 @@ import voting_system.county.CountyEntity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
@@ -14,7 +15,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class CountyRepresentativeEntity extends AdminEntity {
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
+    @JoinColumn(name = "county_id", nullable = false)
     private CountyEntity county;
 
     public CountyEntity getCounty() {
